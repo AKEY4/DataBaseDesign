@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Shot Data Display</title>
-    <link rel="stylesheet" href="styles/style.css"></link>
-    <script src="scripts\script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        select, table {
+            margin: 20px auto;
+            display: block;
+            width: 80%;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        function fetchShots() {
+            const shooter = document.getElementById("shooter").value;
+            window.location.href = `?shooter=${shooter}`;
+        }
+
+        function sortTable(column) {
+            const urlParams = new URLSearchParams(window.location.search);
+            let order = urlParams.get('order') === 'ASC' ? 'DESC' : 'ASC';
+            urlParams.set('sort', column);
+            urlParams.set('order', order);
+            window.location.search = urlParams.toString();
+        }
+    </script>
 </head>
 <body>
     <nav>
-        <a href="add_score.php">Add Score googa</a>
+        <a href="add_score.php">Add Score</a>
     </nav>
-    <h2>Shot Data by Shooter</h2>
+    <h2 style="text-align: center;">Shot Data by Shooter</h2>
     <select id="shooter" onchange="fetchShots()">
         <option value="">Select Shooter (All Shots)</option>
         <?php

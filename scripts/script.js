@@ -1,4 +1,4 @@
-function fetchShots() {
+        function fetchShots() {
             const shooter = document.getElementById("shooter").value;
             window.location.href = `?shooter=${shooter}`;
         }
