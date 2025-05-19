@@ -2,12 +2,13 @@
 <html lang="en">
     <meta charset="UTF-8">
     <title>Shot Data Display</title>
-    <link rel="stylesheet" href="styles/style.css"></link>
+    <link rel="stylesheet" href="styles/style.css">
     <script src="scripts\script.js"></script>
 </head>
 <body>
     <nav>
-        <a href="add_score.php">Add Score googa</a>
+        <a href="add_score.php">Add Score</a>
+        <a href="rounds.php">Rounds</a>
     </nav>
     <h2>Shot Data by Shooter</h2>
     <select id="shooter" onchange="fetchShots()">
