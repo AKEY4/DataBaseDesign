@@ -7,6 +7,7 @@
 </head>
 <body>
     <nav>
+        <a href="home.php">Home</a>
         <a href="add_score.php">Add Score</a>
         <a href="rounds.php">Rounds</a>
     </nav>

@@ -42,6 +42,11 @@ if (isset($_GET['shooter_id']) && isset($_GET['round_id'])) {
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <nav>
+        <a href="home.php">Home</a>
+        <a href="add_score.php">Add Score</a>
+        <a href="rounds.php">Rounds</a>
+    </nav>
     <h2>View Shots from a Round</h2>
 
     <!-- Shooter Selection -->
